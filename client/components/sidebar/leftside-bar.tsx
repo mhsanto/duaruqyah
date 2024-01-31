@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ShowIcon from "../shared/show-icon";
 const LeftSidebar = () => {
   const NavContent = () => {
     const pathname = usePathname();
@@ -19,15 +20,10 @@ const LeftSidebar = () => {
               key={link.id}
               href={link.path}
               className={cn(
-                " flex items-center w-fit shadow-none p-3 hover:ring-2  bg-primaryColor rounded-full cursor-pointer "
+                " flex items-center w-fit shadow-none  hover:ring-2 rounded-full cursor-pointer "
               )}
             >
-              <Image
-                src={`/assets/icons/${link.icon}`}
-                width={16}
-                height={16}
-                alt={link.name}
-              />
+              <ShowIcon icon={link.icon} />
             </Link>
           );
         })}

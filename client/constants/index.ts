@@ -4,7 +4,7 @@ type SidebarLink = {
   path: string;
   icon: string;
 };
-export const sidebarLinks:SidebarLink[] = [
+export const sidebarLinks: SidebarLink[] = [
   {
     id: 1,
     name: "Home",
@@ -46,5 +46,38 @@ export const sidebarLinks:SidebarLink[] = [
     name: "Book",
     path: "/book",
     icon: "/book.svg",
+  },
+];
+
+type SettingsType = {
+  id: number;
+  name: string;
+  icon: string;
+  href: string;
+};
+export const settings: SettingsType[] = [
+  {
+    id: 111,
+    name: "Language Settings",
+    icon: "/language.svg",
+    href:"/settings/language"
+  },
+  {
+    id: 112,
+    name: "General Settings",
+    icon: "/general.svg",
+    href:"/settings/general"
+  },
+  {
+    id: 113,
+    name: "Font Settings",
+    icon: "/appearance.svg",
+    href: "/settings/font"
+  },
+  {
+    id: 114,
+    name: "Appearance Settings",
+    icon: "/appearance-green.svg",
+    href: "/settings/appearance"
   },
 ];
