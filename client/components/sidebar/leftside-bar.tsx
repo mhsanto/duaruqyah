@@ -35,8 +35,8 @@ const LeftSidebar = () => {
     );
   };
   return (
-    <div className="bg-white light-border custom-scrollbar sticky left-9 top-12 flex flex-col justify-between w-fit items-center h-[90vh] py-4 rounded-3xl">
-      <div className=" flex flex-col h-full items-center w-full justify-between gap-4">
+    <div className="sticky left-7 top-0 flex flex-col justify-between w-fit items-center   h-screen">
+      <div className=" flex flex-col items-center w-full justify-between gap-4 py-4 relative top-5 bg-white h-[90vh] rounded-3xl">
         <Image
           src="/assets/icons/logo.svg"
           width={70}
