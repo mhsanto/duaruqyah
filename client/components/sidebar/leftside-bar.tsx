@@ -9,7 +9,7 @@ const LeftSidebar = () => {
   const NavContent = () => {
     const pathname = usePathname();
     return (
-      <section className="flex flex-col h-full gap-4 w-full items-center">
+      <section className="flex flex-col gap-4 w-full items-center h-full">
         {sidebarLinks?.map((link: any) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
@@ -31,8 +31,8 @@ const LeftSidebar = () => {
     );
   };
   return (
-    <div className="sticky left-7 top-0 flex flex-col justify-between w-fit items-center   h-screen">
-      <div className=" flex flex-col items-center w-full justify-between gap-4 py-4 relative top-5 bg-white h-[90vh] rounded-3xl">
+    <div className="sticky left-7 top-0 flex flex-col justify-between bottom-0 max-h-[95vh] w-fit items-center">
+      <div className=" flex flex-col h-full items-center w-full justify-between gap-4 py-4 relative top-5 bg-white rounded-3xl">
         <Image
           src="/assets/icons/logo.svg"
           width={70}

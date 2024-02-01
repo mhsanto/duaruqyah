@@ -6,7 +6,7 @@ import NightMode from "../shared/night-mode";
 
 const RightSidebar = async () => {
   return (
-    <div className="bg-white text-black fixed right-8 h-screen flex flex-col mt-24 py-7 rounded-3xl px-2 lg:w-[290px] ">
+    <div className=" sticky z-20 bg-white text-black  right-8 h-[80vh] shadow-md  flex-col mt-24 py-7 rounded-3xl px-2.5 lg:w-[240px] hidden lg:flex">
       <div>
         <h2 className="font-semibold text-center ">Settings</h2>
         <div className="flex flex-col pt-5 gap-3.5 ">
@@ -14,7 +14,7 @@ const RightSidebar = async () => {
             <Link
               key={item.id}
               href={item.href}
-              className="flex gap-2 items-center w-full bg-secondaryColor rounded-md px-2.5 py-1.5 last:text-secondary_green  last:font-extrabold "
+              className="flex gap-2 items-center w-full bg-secondaryColor rounded-md px-2.5 py-1.5 last:text-secondary_green  last:font-extrabold last:border-l-4 last:border-secondary_green"
             >
               <ShowIcon icon={item.icon} />
               <p
