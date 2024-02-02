@@ -1,33 +1,54 @@
 "use client";
-import { DuaCategoriesType } from "@/app/type";
+import { DuaCategoriesType, SubCategoriesItem } from "@/app/type";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import DuaByCategory from "./dua-by-category";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import SubCategory from "./sub-cateogory";
 
 const DuaCategories: React.FC<DuaCategoriesType> = ({ cat }) => {
   const searchParams = useSearchParams();
-  const catId = searchParams.get("cat");
+  const [data, setData] = useState<SubCategoriesItem[]>([]);
+
+  const catId = parseInt(searchParams.get("cat") as string, 10);
+
   const newUrl = `/duas/${encodeURIComponent(
     cat.cat_name_en.replace(/'/g, "").replace(/\s+/g, "-").replace(/&/g, "and")
   )}`;
-  const getSubCategorybyCatId = async (catId: string) => {
-    const subCat = await fetch(
-      `${process.env.GET_DATA_FROM_SERVER}/subcategories/${catId}`
-    ).then((res) => res.json());
-    return subCat;
-  };
+
+  useEffect(() => {
+    const getCategoriesByCatId = async () => {
+      const res = await fetch(
+        `http://localhost:3000/api/subcategories?cat_id=${catId}`
+      );
+      const subcategories = await res.json();
+      setData(subcategories?.sub_category);
+    };
+    getCategoriesByCatId();
+  }, [catId]);
+
   return (
-    <Link
-      href={`${newUrl}/?cat=${cat.cat_id}`}
-      key={cat.id}
-      className={cn(
-        catId === cat.cat_id.toString() ? `bg-thirdColor` : `bg-white`,
-        `flex my-1 justify-between w-full p-3 rounded-xl hover:bg-thirdColor transition`
-      )}
-    >
-      <DuaByCategory cat={cat} />
-    </Link>
+    <>
+      <Link
+        href={`${newUrl}/?cat=${cat.cat_id}`}
+        key={cat.id}
+        className={cn(
+          catId === cat.cat_id ? `bg-thirdColor` : `bg-white`,
+          `flex my-1 justify-between w-full p-3 rounded-xl hover:bg-thirdColor transition`
+        )}
+      >
+        <DuaByCategory cat={cat} />
+      </Link>
+
+      {catId === cat.cat_id ? (
+        <div className="ml-6 flex flex-col gap-5  border-dashed border-l-2 border-secondary_green pl-2 py-2">
+          {data.map((subcat: SubCategoriesItem) => (
+            <SubCategory subcat={subcat} key={subcat.id} />
+          ))}
+        </div>
+      ) : null}
+    </>
   );
 };
 

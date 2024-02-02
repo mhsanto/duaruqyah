@@ -14,17 +14,10 @@ const DuasSection = async () => {
   ).then((res) => res.json());
 
   return (
-    <div className="flex flex-col items-start max-h-full  overflow-y-scroll ">
+    <div className="flex flex-col items-start max-h-full  overflow-y-scroll pb-7 bg-white">
       {duas.category.map((cat: Category) => (
         <DuaCategories key={cat.id} cat={cat} />
       ))}
-
-      <div className=" ml-6 flex flex-col gap-2 h-max border-dashed border-l-2 border-secondary_green pl-2 ">
-        <div className="flex w-full relative ">
-          <span className="custom_class" />
-          <p className="text-xs font-medium">what is dua</p>
-        </div>
-      </div>
     </div>
   );
 };

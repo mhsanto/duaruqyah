@@ -11,10 +11,6 @@ const LeftSidebar = () => {
     return (
       <section className="flex flex-col gap-4 w-full items-center h-full">
         {sidebarLinks?.map((link: any) => {
-          const isActive =
-            (pathname.includes(link.route) && link.route.length > 1) ||
-            pathname === link.route;
-
           return (
             <Link
               key={link.id}
@@ -33,13 +29,7 @@ const LeftSidebar = () => {
   return (
     <div className="sticky left-7 top-0 flex flex-col justify-between bottom-0 max-h-[95vh] w-fit items-center">
       <div className=" flex flex-col h-full items-center w-full justify-between gap-4 py-4 relative top-5 bg-white rounded-3xl">
-        <Image
-          src="/assets/icons/logo.svg"
-          width={70}
-          height={70}
-          alt="logo"
-          className="w-[4.5625rem]"
-        />
+        <Image src="/assets/icons/logo.svg" width={73} height={73} alt="logo" />
 
         <div>
           <NavContent />

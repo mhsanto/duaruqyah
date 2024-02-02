@@ -9,7 +9,7 @@ const NightMode = () => {
         width={26}
         height={26}
         alt="switcher"
-        className="cursor-pointer"
+        className="cursor-pointer h-auto w-auto"
       />
     </div>
   );

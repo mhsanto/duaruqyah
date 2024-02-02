@@ -3,7 +3,14 @@ const express = require("express");
 const db = require("./db");
 const app = express();
 const port = 3000; // Choose your desired port
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
 
+app.use(cors(corsOptions));
 // Middleware for parsing JSON
 app.use(express.json());
 

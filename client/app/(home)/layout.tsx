@@ -11,11 +11,11 @@ const LayoutDesign = ({ children }: { children: React.ReactNode }) => {
       <div className="flex justify-between relative">
         <LeftSidebar />
 
-        <section className="relative flex min-h-screen flex-1 flex-col  pt-24  max-w-full overflow-x-hidden z-10">
+        <section className="relative flex min-h-screen flex-1 flex-col max-w-full overflow-x-hidden z-10 ">
           <div className="pl-[3rem] w-full max-w-[1160px]">
-          <div className="flex gap-4">
-            <CategoriesSection />
-            {children}
+            <div className="flex gap-4">
+              <CategoriesSection />
+              <div className="pt-24">{children}</div>
             </div>
           </div>
         </section>
