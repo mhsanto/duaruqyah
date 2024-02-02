@@ -4,7 +4,7 @@ const LocalSearchBar = () => {
   return (
     <div className="flex gap-2 border-2 p-2 rounded">
       <Image
-        src="assets/icons/search.svg"
+        src="/assets/icons/search.svg"
         width={20}
         height={20}
         alt="search"

@@ -1,13 +1,9 @@
+import { DuaListProps } from "@/app/type";
 import Image from "next/image";
 
-const DuaList = () => {
+const DuaList = ({ dua }: DuaListProps) => {
   return (
-    <div className="flex flex-col gap-4">
-      <p className="bg-white py-2 px-3 rounded-lg">
-        <span className="text-secondary_green font-semibold">Section</span>{" "}
-        Title of dua
-      </p>
-
+    <div className="flex flex-col gap-4 ">
       <div className="flex flex-col gap-4 bg-white rounded-lg px-4 py-3">
         <div className=" flex items-center gap-7">
           <Image
@@ -17,21 +13,24 @@ const DuaList = () => {
             alt="title-logo"
           />
           <ol className="list-decimal">
-            <li className="text-secondary_green font-semibold">Title of dua</li>
+            <li className="text-secondary_green font-semibold">
+              {dua.dua_name_en}
+            </li>
           </ol>
         </div>
-        <p>
-          Prophet (ﷺ) used to say after every compulsory prayer, The servant
-          will ask his Lord for all of his religiously and worldly needs,
-          because the treasure of all things is in the hands of Allah. Allah
-          says (interpretation of the meaning): “And there is not a thing but
-          that with Us are its depositories, and We do not send it down except
-          according to a known measure.” (Sura Al-Hijr 15:21) No one can
-          withhold what Allah gives; And, no one can give what he resists.
-        </p>
+        <div className=" flex flex-col gap-6 leading-8">
+          <p className="text-lg">{dua.top_en}</p>
+          <p className="w-full text-right text-3xl leading-10">{dua.dua_arabic}</p>
+          {dua.translation_en && (
+            <p className="italic text-lg leading-8">
+              <span className="italic font-medium">Transliteration:</span>
+              {dua.translation_en}
+            </p>
+          )}
+        </div>
         <div>
           <p className="text-secondary_green font-semibold">Reference:</p>
-          <p>Bukhari:844</p>
+          <p className="font-medium">{dua.refference_en}</p>
         </div>
       </div>
     </div>

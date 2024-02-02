@@ -1,26 +1,24 @@
-import Image from "next/image";
+import DuaCategories from "./dua-categories";
+type Category = {
+  id: number;
+  cat_id: number;
+  cat_name_bn: string;
+  cat_name_en: string;
+  no_of_subcat: number;
+  no_of_dua: number;
+  cat_icon: string;
+};
+const DuasSection = async () => {
+  const duas = await fetch(
+    `${process.env.GET_DATA_FROM_SERVER}/categories`
+  ).then((res) => res.json());
 
-const DuasSection = () => {
   return (
-    <div className="flex flex-col items-start">
-      <div className="flex justify-between w-full my-2 bg-thirdColor p-3 rounded-xl">
-        <div className="flex gap-2">
-          <Image
-            src="/assets/icons/user.svg"
-            width={40}
-            height={40}
-            alt="dua"
-          />
-          <div className="">
-            <h3 className="text-sm text-semibold">Introduction to Dua</h3>
-            <p className="text-xs text-gray-500">Subcategory:11</p>
-          </div>
-        </div>
-        <div className=" flex flex-col items-center">
-          <span>15</span>
-          <span className="text-xs text-gray-500">duas</span>
-        </div>
-      </div>
+    <div className="flex flex-col items-start  overflow-y-scroll ">
+      {duas.category.map((cat: Category) => (
+        <DuaCategories key={cat.id} cat={cat} />
+      ))}
+
       <div className=" ml-6 flex flex-col gap-2 h-max border-dashed border-l-2 border-secondary_green pl-2 ">
         <div className="flex w-full relative ">
           <span className="custom_class" />
