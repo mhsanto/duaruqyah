@@ -5,7 +5,7 @@ import Link from "next/link";
 import DuaByCategory from "./dua-by-category";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import SubCategory from "./sub-cateogory";
+import SubCategory from "./sub-category";
 
 const DuaCategories: React.FC<DuaCategoriesType> = ({ cat }) => {
   const searchParams = useSearchParams();
@@ -43,6 +43,7 @@ const DuaCategories: React.FC<DuaCategoriesType> = ({ cat }) => {
 
       {catId === cat.cat_id ? (
         <div className="ml-6 flex flex-col gap-5  border-dashed border-l-2 border-secondary_green pl-2 py-2">
+          
           {data.map((subcat: SubCategoriesItem) => (
             <SubCategory subcat={subcat} key={subcat.id} />
           ))}
