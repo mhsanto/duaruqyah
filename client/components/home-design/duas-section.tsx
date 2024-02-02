@@ -14,7 +14,7 @@ const DuasSection = async () => {
   ).then((res) => res.json());
 
   return (
-    <div className="flex flex-col items-start  overflow-y-scroll ">
+    <div className="flex flex-col items-start max-h-full  overflow-y-scroll ">
       {duas.category.map((cat: Category) => (
         <DuaCategories key={cat.id} cat={cat} />
       ))}

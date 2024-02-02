@@ -1,6 +1,6 @@
 // server.js
-const express = require('express');
-const db = require('./db');
+const express = require("express");
+const db = require("./db");
 const app = express();
 const port = 3000; // Choose your desired port
 
@@ -10,9 +10,14 @@ app.use(express.json());
 // Require the database connection
 
 // Require the routes
-const routes = require('./routes');
-app.use('/api', routes);
+const categoriesRoutes = require("./routes/categories");
+const subcategoriesRoutes = require("./routes/sub_category");
+const duasRoutes = require("./routes/duas");
 
+// Use the routes
+app.use("/api/categories", categoriesRoutes);
+app.use("/api/subcategories", subcategoriesRoutes);
+app.use("/api/duas", duasRoutes);
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
