@@ -8,12 +8,12 @@ const poppins = Poppins({
 
 const Navbar = () => {
   return (
-    <nav className="fixed right-0 left-0 h-[4rem] flex justify-center w-[90rem] pl-20 mx-auto items-center mt-4 ">
-      <header className="flex justify-between w-full ">
-        <h1 className={`text-2xl font-semibold ${poppins.className}`}>
+    <nav className="sticky md:fixed right-0 left-0 h-[4rem] flex justify-center px-4 md:px-[4rem] mx-auto items-center pt-4 z-10  bg-primaryColor">
+      <header className="flex justify-between items-center gap-4 w-full ">
+        <h1 className={`text-2xl font-semibold md:pl-[5rem] whitespace-nowrap ${poppins.className}`}>
           Dua Page
         </h1>
-        <div className="flex w-[700px] justify-between items-center">
+        <div className="flex max-w-[700px] w-max lg:w-full justify-between items-center gap-3">
           <SearchBar />
           <UserAvatar />
         </div>

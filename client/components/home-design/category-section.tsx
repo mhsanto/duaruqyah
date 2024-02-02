@@ -1,15 +1,15 @@
-import DuasSection from "./duas-section";
+import CategoryLists from "./category-lists";
 import LocalSearchBar from "./local-searchbar";
 
 const CategoriesSection = () => {
   return (
-    <div className="max-w-[350px] w-full bg-white shadow-sm rounded-md max-h-[85vh] overflow-hidden sticky top-20 ">
+    <div className="w-full md:max-w-[350px] lg:w-full sm:w-[300px] bg-white shadow-sm rounded-md max-h-[85vh] overflow-hidden sticky top-10 sm:top-20 flex-shrink-0">
       <h2 className="text-base text-center bg-secondary_green text-white py-3 font-semibold">
         Categories
       </h2>
       <div className="px-3 my-3 h-full">
         <LocalSearchBar />
-        <DuasSection />
+        <CategoryLists />
       </div>
     </div>
   );

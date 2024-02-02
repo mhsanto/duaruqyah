@@ -1,8 +1,9 @@
+import { redirect } from "next/navigation";
 
 const HomePage = () => {
-  
-  return <div className="flex gap-4">
+  redirect(`duas/Duas-Importance?cat=1`);
 
-  </div>;
+  return null;
 };
+
 export default HomePage;

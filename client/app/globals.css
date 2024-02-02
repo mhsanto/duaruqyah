@@ -7,6 +7,10 @@ body,
 :root {
   height: 100%;
 }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(26, 25, 20,0.05) rgba(255,255,255,0.01);
+}
 .custom_class {
   width: 7px;
   height: 7px;

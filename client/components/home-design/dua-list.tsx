@@ -4,6 +4,16 @@ import Image from "next/image";
 const DuaList = ({ dua }: DuaListProps) => {
   return (
     <div className="flex flex-col gap-4 ">
+      {
+        dua.dua_id === 1 && (
+          <p className="bg-white py-2 px-3 rounded-lg ">
+          <span className="text-secondary_green font-semibold">
+            Section:{" "}
+          </span>
+          {dua.dua_name_en}
+        </p>)
+      }
+       
       <div className="flex flex-col gap-4 bg-white rounded-lg px-4 py-3">
         <div className=" flex items-center gap-7">
           <Image

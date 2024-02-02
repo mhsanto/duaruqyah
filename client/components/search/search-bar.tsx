@@ -2,9 +2,10 @@ import Image from "next/image";
 
 const SearchBar = () => {
   return (
-    <div className="w-[23.1875rem] p-0.5 bg-white rounded-md flex items-center justify-between shadow-sm">
+    <div className="max-w-[23.1875rem] w-full p-0.5 bg-white rounded-md flex items-center justify-between shadow-sm flex-1">
+
       <input
-        className="pl-2.5 w-full focus:border-0 focus-within:outline-none"
+        className="hidden sm:block pl-2.5 w-full focus:border-0 focus-within:outline-none"
         type="text"
         placeholder="Search by Dua Name"
       />
