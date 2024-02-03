@@ -2,7 +2,7 @@
 const express = require("express");
 const db = require("./db");
 const app = express();
-const port = 3000; // Choose your desired port
+const port = 9000; // Choose your desired port
 const cors = require("cors");
 const corsOptions = {
   origin: "*",
@@ -22,9 +22,10 @@ const subcategoriesRoutes = require("./routes/sub_category");
 const duasRoutes = require("./routes/duas");
 
 // Use the routes
-app.use("/api/categories", categoriesRoutes);
-app.use("/api/subcategories", subcategoriesRoutes);
-app.use("/api/duas", duasRoutes);
+app.use("/", (req, res) => res.send("Welcome to Dua API"));
+app.use("/categories", categoriesRoutes);
+app.use("/subcategories", subcategoriesRoutes);
+app.use("/duas", duasRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
