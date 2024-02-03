@@ -9,8 +9,9 @@ body,
 }
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgb(26, 25, 20,0.05) rgba(255,255,255,0.01);
+  scrollbar-color: rgb(26, 25, 20, 0.05) rgba(255, 255, 255, 0.01);
 }
+
 .custom_class {
   width: 5px;
   height: 5px;
@@ -19,4 +20,10 @@ body,
   position: absolute;
   left: -11.5px;
   top: 3px;
+}
+@media (max-width:380px) {
+  .hide__scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 }

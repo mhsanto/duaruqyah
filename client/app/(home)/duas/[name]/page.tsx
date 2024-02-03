@@ -9,7 +9,7 @@ const Dua: React.FC<DuaParams> = async ({ params, searchParams }) => {
   ).then((res) => res.json());
 
   return (
-    <div className="w-full rounded-xl shadow-sm max-h-screen h-full overflow-scroll flex flex-col gap-3 ">
+    <div className="w-full rounded-xl shadow-sm max-h-screen h-full overflow-scroll scroll- flex flex-col gap-3 hide__scroll">
       {duas?.dua.map((dua: DuaItem) => (
         <DuaList dua={dua} key={dua.dua_id} />
       ))}

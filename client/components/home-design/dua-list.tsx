@@ -45,7 +45,7 @@ const DuaList = ({ dua }: DuaListProps) => {
         </div>
         <div className=" flex flex-col gap-6 leading-8">
           <p className="text-lg">{dua.top_en}</p>
-          <p className="w-full text-right text-3xl leading-10">
+          <p className="w-full text-right text-xl sm:text-3xl leading-10">
             {dua.dua_arabic}
           </p>
           {dua.translation_en && (
