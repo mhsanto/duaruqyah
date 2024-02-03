@@ -25,6 +25,7 @@ const duasRoutes = require("./routes/duas");
 app.use("/api/categories", categoriesRoutes);
 app.use("/api/subcategories", subcategoriesRoutes);
 app.use("/api/duas", duasRoutes);
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
