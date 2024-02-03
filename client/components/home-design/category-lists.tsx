@@ -8,7 +8,7 @@ type Category = {
   no_of_dua: number;
   cat_icon: string;
 };
-const DuasSection = async () => {
+const CategoryList = async () => {
   const duas = await fetch(
     `${process.env.GET_DATA_FROM_SERVER}/categories`
   ).then((res) => res.json());
@@ -22,4 +22,4 @@ const DuasSection = async () => {
   );
 };
 
-export default DuasSection;
+export default CategoryList;

@@ -12,11 +12,11 @@ body,
   scrollbar-color: rgb(26, 25, 20,0.05) rgba(255,255,255,0.01);
 }
 .custom_class {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
   background-color: #1fa45b;
   border-radius: 100%;
   position: absolute;
-  left: -12.5px;
+  left: -11.5px;
   top: 3px;
 }

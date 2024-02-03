@@ -1,3 +1,13 @@
+import React from "react";
+export type DuaParams = {
+  params: {
+    cat_id: number;
+  };
+  searchParams: {
+    [key: string]: string | string[] | undefined;
+  };
+};
+
 export type DuaItem = {
   id: number;
   cat_id: number;
@@ -26,6 +36,7 @@ export type DuaResponse = {
 
 export type DuaListProps = {
   dua: DuaItem;
+  targetRef?: any;
 };
 export type DuaCategoriesType = {
   cat: {

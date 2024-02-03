@@ -20,7 +20,7 @@ const DuaCategories: React.FC<DuaCategoriesType> = ({ cat }) => {
   useEffect(() => {
     const getCategoriesByCatId = async () => {
       const res = await fetch(
-        `http://localhost:3000/api/subcategories?cat_id=${catId}`
+        `https://duaruqyah-server.onrender.com/api/subcategories?cat_id=${catId}`
       );
       const subcategories = await res.json();
       setData(subcategories?.sub_category);
@@ -35,15 +35,14 @@ const DuaCategories: React.FC<DuaCategoriesType> = ({ cat }) => {
         key={cat.id}
         className={cn(
           catId === cat.cat_id ? `bg-thirdColor` : `bg-white`,
-          `flex my-1 justify-between w-full p-3 rounded-xl hover:bg-thirdColor transition`
+          `flex justify-between w-full p-3 rounded-xl hover:bg-thirdColor transition my-1`
         )}
       >
         <DuaByCategory cat={cat} />
       </Link>
 
       {catId === cat.cat_id ? (
-        <div className="ml-6 flex flex-col gap-5  border-dashed border-l-2 border-secondary_green pl-2 py-2">
-          
+        <div className="ml-6 flex flex-col gap-5  border-dashed border-l-2 border-secondary_green pl-2 py-2 ">
           {data?.map((subcat: SubCategoriesItem) => (
             <SubCategory subcat={subcat} key={subcat.id} />
           ))}

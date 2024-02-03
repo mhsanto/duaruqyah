@@ -10,10 +10,9 @@ const LayoutDesign = ({ children }: { children: React.ReactNode }) => {
       <Navbar />
       <div className="flex justify-between relative">
         <LeftSidebar />
-
-        <section className="relative flex min-h-screen flex-1 flex-col max-w-full overflow-x-hidden  ">
+        <section className="relative flex min-h-screen flex-1 flex-col max-w-full overflow-x-hidden">
           <div className="sm:pl-9 lg:pl-[3rem] w-full max-w-[1160px]">
-            <div className="flex gap-4 px-1.5 sm:px-4  flex-col sm:flex-row">
+            <div className="flex gap-4 px-1.5 sm:px-4 flex-col sm:flex-row md:max-h-screen">
               <CategoriesSection />
               <div className="pt-16 sm:pt-20">{children}</div>
             </div>
