@@ -6,7 +6,7 @@ import NightMode from "../shared/night-mode";
 
 const RightSidebar = async () => {
   return (
-    <div className="sticky z-20 bg-white text-black right-5 max-h-[80vh] h-[80vh] shadow-md  flex-col mt-24 py-7 rounded-3xl px-2.5 ml-4 w-[240px] hidden xl:flex">
+    <div className="sticky z-20 bg-white text-black right-5 max-h-[80vh] h-[80vh] shadow-md  flex-col mt-24 py-7 rounded-3xl px-2.5 w-[270px] hidden xl:flex">
       <div>
         <h2 className="font-semibold text-center ">Settings</h2>
         <div className="flex flex-col pt-5 gap-3.5 ">
